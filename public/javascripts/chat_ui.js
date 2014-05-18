@@ -44,6 +44,12 @@ $(document).ready(function(){
 		$('#messages').append(divSystemContentElement(message));
 	});
 	
+	socket.on('message', function (message) {
+		  var newElement = $('<div></div>').text(message.text);
+		  $('#messages').append(newElement);
+	});
+
+	
 	 socket.on('rooms', function(rooms) {
 		 $('#room-list').empty();
 		 for(var room in rooms) {
