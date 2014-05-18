@@ -1,3 +1,5 @@
+var socket = io.connect();
+
 function divEscapedContentElement(message) {
   return $('<div></div>').text(message);
 }
@@ -22,8 +24,6 @@ function processUserInput(chatApp, socket) {
 }
   $('#send-message').val('');
 }
-
-var socket = io.connect();
 
 $(document).ready(function(){
 	var chatApp = new Chat(socket);
